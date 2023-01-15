@@ -1,19 +1,8 @@
 def find_target(target, array):
-    results = []
-    if len(array) == 2:
-        results = [0, 1]
-    else:
-        i = 0
-        while i < len(array):
-            first = array[i]
-            for ele in array[i+1:]:
-                if (ele + first) == target:
-                    results.append(array.index(first))
-                    results.append(array.index(ele))
-            
-            i += 1
-    
-    return results
+    for i in range(len(array)):
+        for j in range(i + 1, len(array)):
+            if target == array[i] + array[j]:
+                return [i, j]
     
     
     
